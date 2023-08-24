@@ -9,8 +9,8 @@ public class Dbconnection {
     public static Connection createDbconnection(){
         //code to create db connection
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee?useSSL=false","root","Fatima2012");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee?useSSL=false","root","Password");
         }catch (ClassNotFoundException e){
             e.printStackTrace();
         } catch (SQLException e) {

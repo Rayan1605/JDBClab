@@ -13,4 +13,29 @@ public interface EmployeeInterface {
 
     //delete employee
    public void deleteEmployee(int id );
+
+
 }
+
+
+// create
+//show all
+//show by id
+//update
+//delete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

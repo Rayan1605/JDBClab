@@ -2,7 +2,7 @@ package org.example;
 
 import java.sql.*;
 
-public class Employeeimplement implements EmployeeInterface{
+public class Employeeimplement  extends Parent implements EmployeeInterface{
 
 Connection con;
     @Override
@@ -16,6 +16,7 @@ Connection con;
             ps.setDouble(3,employee.getSalary());
             ps.setInt(4,employee.getAge());
          int count = ps.executeUpdate();
+
          if (count > 0){
              System.out.println("Employee created successfully");
         }
@@ -27,6 +28,16 @@ Connection con;
         }
 
 
+    }
+
+    @Override
+    public void add(int a) {
+        super.add(a);
+    }
+
+    @Override
+    public void print() {
+        super.print();
     }
 
     @Override
@@ -102,17 +113,15 @@ catch (Exception e) {
         String query = "delete from employee where id = ?";
         try {
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setInt(1,id);
+            ps.setInt(1, id);
             int count = ps.executeUpdate();
-            if (count > 0){
+            if (count > 0) {
                 System.out.println("Employee deleted successfully");
-            }
-            else {
+            } else {
                 System.out.println("Employee not deleted");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 }

@@ -6,6 +6,9 @@ public class Main {
     public static void main(String[] args) {
         Employeeimplement emp = new Employeeimplement();
 
+        emp.add(2);
+        emp.print();
+
 
         System.out.println("Welcome to Employee Management application!");
         Scanner myinput = new Scanner(System.in);
@@ -13,7 +16,7 @@ public class Main {
         do {
             try {
                 long secondsToSleep = 2;
-                Thread.sleep(secondsToSleep * 1000);
+                Thread.sleep(secondsToSleep * 500);
             } catch (InterruptedException ie) {
                 Thread.currentThread().interrupt();
             }
@@ -29,6 +32,7 @@ public class Main {
             switch (ch){
                 case 1:
                     Employee employee = new Employee();
+                    Employee employee1 = new Employee(45,"sara", 5000, 23);
                     System.out.println("Enter the id of the employee\n");
                     int id = myinput.nextInt();
                     employee.setId(id);
